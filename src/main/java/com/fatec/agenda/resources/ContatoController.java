@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.fatec.agenda.dtos.ContatosRequest;
 import com.fatec.agenda.dtos.ContatosResponse;
-import com.fatec.agenda.entities.Contato;
 import com.fatec.agenda.services.ContatoService;
 
 @RestController
@@ -40,7 +40,7 @@ public class ContatoController {
         return ResponseEntity.noContent().build();
     }
     @PostMapping
-    public ResponseEntity<ContatosResponse> saveContato(@RequestBody ContatosRequest contato){
+    public ResponseEntity<ContatosResponse> saveContato(@Validated @RequestBody ContatosRequest contato){
         ContatosResponse newContato = this.contatoService.saveContato(contato);
 
         URI location = ServletUriComponentsBuilder
@@ -52,7 +52,7 @@ public class ContatoController {
         return ResponseEntity.created(location).body(newContato);
     }
     @PutMapping("{id}")
-    public ResponseEntity<Void> updateContato(@PathVariable int id,@RequestBody ContatosRequest contato){
+    public ResponseEntity<Void> updateContato(@Validated @PathVariable int id,@RequestBody ContatosRequest contato){
         this.contatoService.updateContato(id, contato);
 
         return ResponseEntity.ok().build();

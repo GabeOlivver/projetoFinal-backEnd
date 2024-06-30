@@ -15,7 +15,7 @@ public class Contato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @Column(length = 40)
+    @Column(length = 40, nullable = false)
     private String nome;
     private String email;
     private String telefone;

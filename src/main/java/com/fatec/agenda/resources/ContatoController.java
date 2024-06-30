@@ -52,7 +52,7 @@ public class ContatoController {
         return ResponseEntity.created(location).body(newContato);
     }
     @PutMapping("{id}")
-    public ResponseEntity<Void> updateContato(@Validated @PathVariable int id,@RequestBody ContatosRequest contato){
+    public ResponseEntity<Void> updateContato(@PathVariable int id, @Validated @RequestBody ContatosRequest contato){
         this.contatoService.updateContato(id, contato);
 
         return ResponseEntity.ok().build();

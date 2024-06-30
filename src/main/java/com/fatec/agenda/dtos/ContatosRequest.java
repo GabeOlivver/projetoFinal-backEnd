@@ -1,19 +1,27 @@
 package com.fatec.agenda.dtos;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record ContatosRequest(
+    
+    @NotBlank(message = "O nome precisa ser preenchido")
     @NotNull(message = "nome não pode ser nulo")
     String nome, 
-    @NotNull(message = "email não pode ser nulo")
+    
+    @NotBlank(message = "email precisa ser preenchido")
     String email,
-    @NotNull(message = "telefone não pode ser nulo")
+    
+    @NotBlank(message = "telefone precisa ser preenchido")
     String telefone,
-    @NotNull(message = "tipo não pode ser nulo")
+    
+    @NotBlank(message = "tipo precisa ser preenchido")
     String tipoContato,
-    @NotNull(message = "preferencia não pode ser nulo")
+    
+    @NotBlank(message = "preferencia precisa ser preenchido")
     String preferenciaContato,
-    @NotNull(message = "observações não pode ser nulo")
+   
+    @NotBlank(message = "observações precisa ser preenchida")
     String observacoes) {
     
 }

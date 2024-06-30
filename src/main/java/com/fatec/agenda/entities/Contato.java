@@ -17,15 +17,10 @@ public class Contato {
     
     @Column(length = 40)
     private String nome;
-
     private String email;
-
     private String telefone;
-
     private String tipoContato;
-
     private String preferenciaContato;
-
     private String observacoes;
 
     public Integer getId() {

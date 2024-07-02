@@ -16,7 +16,7 @@
 - Vá até "src";
 - main:java: AgendaApplication.java
 ![alt text](image.png)
-- Clique em RUN e se tudo der certo, está é a tela de que esta API está rodando :
+- Clique em RUN e se tudo der certo, essa será a tela indicando que a API está funcionando :
 ![alt text](image-1.png)
 
 - Abra um navegador de sua escolha e digite : http://localhost:8080/agenda;

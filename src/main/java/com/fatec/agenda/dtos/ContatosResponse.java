@@ -8,7 +8,8 @@ public record ContatosResponse(
     String telefone,
     String tipoContato,
     String preferenciaContato,
-    String observacoes
+    String observacoes,
+    Boolean confirmacao
 ) {
     
 }

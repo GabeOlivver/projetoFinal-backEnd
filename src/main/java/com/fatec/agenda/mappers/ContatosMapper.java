@@ -13,6 +13,7 @@ public class ContatosMapper {
         contato.setTipoContato(request.tipoContato());
         contato.setPreferenciaContato(request.preferenciaContato());
         contato.setObservacoes(request.observacoes());
+        contato.setConfirmacao(request.confirmacao());
 
         return contato;
     }
@@ -25,6 +26,8 @@ public class ContatosMapper {
         contato.getTelefone(),
         contato.getTipoContato(),
         contato.getPreferenciaContato(),
-        contato.getObservacoes());
+        contato.getObservacoes(),
+        contato.getConfirmacao()
+        );
     }
 }

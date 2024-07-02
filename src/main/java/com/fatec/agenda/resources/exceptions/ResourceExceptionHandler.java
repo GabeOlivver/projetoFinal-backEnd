@@ -47,4 +47,19 @@ public class ResourceExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(error);
     }
+
+    @ExceptionHandler(org.hibernate.LazyInitializationException.class)
+    public ResponseEntity<StandardError> orgHibernateLazyInitializationException(
+        org.hibernate.LazyInitializationException exception,
+        HttpServletRequest request
+        ){
+        StandardError error = new StandardError();
+        error.setStatus(HttpStatus.NOT_FOUND.value());
+        error.setError("Resource Not Found");
+        error.setMessage(exception.getMessage());
+        error.setTimeStemp(Instant.now());
+        error.setPath(request.getRequestURI());
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
 }

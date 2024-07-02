@@ -22,6 +22,7 @@ public class Contato {
     private String tipoContato;
     private String preferenciaContato;
     private String observacoes;
+    private Boolean confirmacao;
 
     public Integer getId() {
         return id;
@@ -64,6 +65,12 @@ public class Contato {
     }
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
+    }
+    public Boolean getConfirmacao() {
+        return confirmacao;
+    }
+    public void setConfirmacao(Boolean confirmacao) {
+        this.confirmacao = confirmacao;
     }
 
 }

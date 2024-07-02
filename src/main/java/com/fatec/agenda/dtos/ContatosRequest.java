@@ -22,6 +22,8 @@ public record ContatosRequest(
     String preferenciaContato,
    
     @NotBlank(message = "observações precisa ser preenchida")
-    String observacoes) {
+    String observacoes,
+    
+    Boolean confirmacao) {
     
 }

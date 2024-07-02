@@ -52,6 +52,7 @@ public class ContatoService {
             aux.setTipoContato(request.tipoContato());
             aux.setPreferenciaContato(request.preferenciaContato());
             aux.setObservacoes(request.observacoes());
+            aux.setConfirmacao(request.confirmacao());
             this.contatosRepository.save(aux);
 
         } catch(EntityNotFoundException e){
